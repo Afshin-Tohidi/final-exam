@@ -13,7 +13,6 @@ const renderFoodCards = (data) => {
   const foodContainer = document.querySelector(".food-container");
   foodContainer.innerHTML = "";
   data.forEach((food) => {
-    console.log(food.name);
     const foodCard = document.createElement("div");
     foodCard.className = "food-card";
 
