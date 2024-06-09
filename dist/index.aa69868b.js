@@ -2,7 +2,6 @@
 const foodData = function(category) {
     fetch(`http://localhost:3131/foods/${category}`).then((response)=>response.json()).then((data)=>{
         renderFoodCards(data);
-        console.log(data);
     });
 };
 const renderFoodCards = (data)=>{
