@@ -5,6 +5,7 @@ const foodData = function (category) {
     .then((response) => response.json())
     .then((data) => {
       renderFoodCards(data);
+      console.log(data);
     });
 };
 
