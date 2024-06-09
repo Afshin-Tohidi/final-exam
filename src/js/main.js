@@ -5,7 +5,6 @@ const foodData = function (category) {
     .then((response) => response.json())
     .then((data) => {
       renderFoodCards(data);
-      return data;
     });
 };
 
@@ -37,7 +36,7 @@ const renderFoodCards = (data) => {
     const minusButton = document.createElement("button");
     minusButton.className = "minus";
     minusButton.textContent = "-";
-    minusButton.addEventListener("click", function () {
+    minusButton.addEventListener("click", () => {
       updateQuantity(food.id, -1, data);
     });
 
@@ -49,12 +48,13 @@ const renderFoodCards = (data) => {
     const plusButton = document.createElement("button");
     plusButton.className = "plus";
     plusButton.textContent = "+";
-    plusButton.addEventListener("click", function () {
+    plusButton.addEventListener("click", () => {
       updateQuantity(food.id, 1, data);
     });
 
     const cartIndicator = document.createElement("div");
     cartIndicator.className = "cart-indicator";
+
     foodContainer.appendChild(foodCard);
     foodCard.appendChild(img);
     foodCard.appendChild(h3);
@@ -62,7 +62,6 @@ const renderFoodCards = (data) => {
     foodCard.appendChild(ingredients);
     foodCard.appendChild(cartIndicator);
     foodCard.appendChild(cartButtons);
-
     cartButtons.appendChild(minusButton);
     cartButtons.appendChild(quantity);
     cartButtons.appendChild(plusButton);

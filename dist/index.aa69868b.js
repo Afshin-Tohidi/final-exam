@@ -2,7 +2,6 @@
 const foodData = function(category) {
     fetch(`http://localhost:3131/foods/${category}`).then((response)=>response.json()).then((data)=>{
         renderFoodCards(data);
-        return data;
     });
 };
 const renderFoodCards = (data)=>{
@@ -27,7 +26,7 @@ const renderFoodCards = (data)=>{
         const minusButton = document.createElement("button");
         minusButton.className = "minus";
         minusButton.textContent = "-";
-        minusButton.addEventListener("click", function() {
+        minusButton.addEventListener("click", ()=>{
             updateQuantity(food.id, -1, data);
         });
         const quantity = document.createElement("span");
@@ -37,7 +36,7 @@ const renderFoodCards = (data)=>{
         const plusButton = document.createElement("button");
         plusButton.className = "plus";
         plusButton.textContent = "+";
-        plusButton.addEventListener("click", function() {
+        plusButton.addEventListener("click", ()=>{
             updateQuantity(food.id, 1, data);
         });
         const cartIndicator = document.createElement("div");
